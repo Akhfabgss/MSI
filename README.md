@@ -55,11 +55,11 @@ Sistem MSI Atlas dibangun menggunakan arsitektur gabungan **Google Apps Script (
 
 * `Dashboard.html` & `Dashboard_JS.html` : Overview KPI cards, grafik Chart.js (Line & Doughnut), dan daftar job terbaru.
 
-* `JobDetail_2.html` & `JobDetail_JS_2.html` : Register detail pekerjaan, expandable audit trail, dan badge SLA warning.
+* `JobDetail_2.html` & `JobDetail_JS.html` : Register detail pekerjaan, expandable audit trail, dan badge SLA warning.
 
 * `Finance.html` & `Finance_JS.html` : Register keuangan, billing gross, cash-in, outstanding, dan settlement.
 
-* `Mastercase_Create.html`, `Mastercase_Edit.html`, `Mastercase_Detail.html` & `Mastercase_JS_2.html` : Wizard multi-stage form (Create/Edit) dan halaman tampilan detail job.
+* `Mastercase_Create.html`, `Mastercase_Edit.html`, `Mastercase_Detail.html` & `Mastercase_JS.html` : Wizard multi-stage form (Create/Edit) dan halaman tampilan detail job.
 
 * `Setting.html` & `Setting_JS.html` : Halaman profil akun, ganti foto, ganti password, dan statistik user.
 
@@ -223,7 +223,7 @@ Alur pekerjaan terbagi dalam 5 Stage Utama yang mengontrol *Job Status*.
 ### 📍 Petunjuk Modifikasi Logic
 
 1. **Default Status Per Stage:**
-   Edit `Mastercase_JS_2.html` pada objek `STAGE_DEFAULT_STATUS`:
+   Edit `Mastercase_JS.html` pada objek `STAGE_DEFAULT_STATUS`:
 
    ```
    var STAGE_DEFAULT_STATUS = {
@@ -237,10 +237,10 @@ Alur pekerjaan terbagi dalam 5 Stage Utama yang mengontrol *Job Status*.
    ```
 
 2. **Kalkulasi Status Dinamis dari Tanggal Input:**
-   Edit `JobDetail_JS_2.html` pada fungsi `getCalculatedJobStatus(item)`.
+   Edit `JobDetail_JS.html` pada fungsi `getCalculatedJobStatus(item)`.
 
 3. **Aturan Pembukaan Stage pada Wizard Form:**
-   Edit `Mastercase_JS_2.html` pada fungsi `calculateMaxStageFromForm()` & `determineMaxUnlockedStage()`.
+   Edit `Mastercase_JS.html` pada fungsi `calculateMaxStageFromForm()` & `determineMaxUnlockedStage()`.
 
 
 
@@ -266,7 +266,7 @@ Sistem secara otomatis melacak batas waktu penuntasan tahap pekerjaan berdasarka
 
 1. **Tampilan Warning Badge di Tabel Job Register:**
 
-   * **Berkas:** `JobDetail_JS_2.html`
+   * **Berkas:** `JobDetail_JS.html`
 
    * **Fungsi:** `getJobWarningBadge(item)`
 
@@ -278,7 +278,7 @@ Sistem secara otomatis melacak batas waktu penuntasan tahap pekerjaan berdasarka
 
 2. **Kalkulasi Audit Trail Lifecycle:**
 
-   * **Berkas:** `JobDetail_JS_2.html`
+   * **Berkas:** `JobDetail_JS.html`
 
    * **Fungsi:** `renderExpandAuditTrail(item)`
 
@@ -312,7 +312,7 @@ Fungsi ini membaca Google Docs Template, mengganti placeholder `{{tag}}` dengan 
 
 * **Backend Apps Script:** `Mastercase_Pdf.js`
 
-* **Pemicu Frontend:** `Mastercase_JS_2.html` (Fungsi `printJobToPDF(jobNo)`)
+* **Pemicu Frontend:** `Mastercase_JS.html` (Fungsi `printJobToPDF(jobNo)`)
 
 ### 🔧 Petunjuk Modifikasi Placeholder PDF
 
