@@ -175,6 +175,38 @@ Alur pekerjaan terbagi dalam 5 Stage Utama yang mengontrol *Job Status*.
 | **Stage 4** | *Fee & Expenses (Adjusting)* | Report Sent + 3 Hari | `Awaiting Invoice` | 
 | **Stage 5** | *Invoicing & Settlement* | Invoice Date + 7 Hari | `Invoice Sent` / `Invoice Paid` | 
 
+### 🔧 Petunjuk Mengubah Target Hari SLA
+
+Pengaturan target hari SLA terdapat pada **Backend** dan **Frontend**. Jika durasi SLA diubah, pastikan kedua bagian diperbarui agar perhitungan sistem tetap konsisten.
+
+#### 1. Backend
+File:
+`backend/Config.js`
+
+Ubah nilai pada `SLA_LIMITS`:
+
+```javascript
+var SLA_LIMITS = {
+  SURVEY_DAYS: 3,
+  REPORT_DAYS: 5,
+  LOP_DAYS: 3,
+  SETTLEMENT_DAYS: 7
+};
+```
+
+#### 2. Frontend
+Pada fungsi renderExpandAuditTrail(item), sesuaikan nilai hari pada t1Date sampai t5Date agar target tanggal pada Lifecycle Audit Trail sesuai dengan konfigurasi backend.
+
+File:
+scripts/JobDetail_Lifecycle_JS.html
+
+```javascript
+var t2Date = isValidDateStr(instDate) ? addDaysToDate(instDate, 3) : '-';
+var t3Date = isValidDateStr(cleanS2Finish) ? addDaysToDate(cleanS2Finish, 5) : '-';
+var t4Date = isValidDateStr(cleanS3Finish) ? addDaysToDate(cleanS3Finish, 3) : '-';
+var t5Date = isValidDateStr(cleanS5Start) ? addDaysToDate(cleanS5Start, 7) : '-';
+```
+
 ### 📍 Petunjuk Modifikasi Logic
 
 1. **Default Status Per Stage:**
