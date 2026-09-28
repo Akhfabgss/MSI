@@ -97,12 +97,12 @@ Firestore digunakan untuk mengelola profil user, role hak akses, dan foto profil
 
    ```
    const firebaseConfig = {
-     apiKey: "AIzaSy...",
-     authDomain: "msi-atlas-adjusting.firebaseapp.com",
-     projectId: "msi-atlas-adjusting",
-     storageBucket: "msi-atlas-adjusting.firebasestorage.app",
-     messagingSenderId: "346794538444",
-     appId: "1:346794538444:web:3d6aa5a1113da0c74e9969"
+     apiKey: "....",
+     authDomain:"....",,
+     projectId: "....",,
+     storageBucket: "....",,
+     messagingSenderId: "....",
+     appId: "....",
    };
    
    ```
