@@ -159,6 +159,28 @@ Sistem memanfaatkan Google Drive API untuk membuat struktur folder penugasan sec
 * **Template Google Docs (PDF Mastercase):**
   Edit `backend/Config.js` pada variabel `TEMPLATE_DOC_ID`.
 
+  ### Modifikasi kategori Marine or Non Marine
+  ```
+  function getRefMsiComponents(lobValue) {
+    var lobMap = {
+      "Heavy Equipment / MV": { type: "NM", code: "HE" },
+      "Marine Cargo": { type: "M", code: "MC" },
+      "Marine Hull": { type: "M", code: "MH" },
+      "Marine P&I": { type: "M", code: "PI" },
+      "Marine & Carrier Liability": { type: "M", code: "FFL" },
+      "Property (PAR / IAR)": { type: "NM", code: "PAR" },
+      "Property Engineering": { type: "NM", code: "ENG" },
+      "Power Plant / Energy": { type: "NM", code: "ENG" },
+      "Business Interruption (BI / ALOP / DSU)": { type: "NM", code: "BI" },
+      "Machinery Breakdown (MB)": { type: "NM", code: "MB" },
+      "General & Product Liability (CGL)": { type: "NM", code: "CGL" },
+      "Financial & Pecuniary Losses": { type: "NM", code: "FIN" },
+      "Fidelity Guarantee & Money Insurance": { type: "NM", code: "FG" },
+      "Catastrophic Losses": { type: "NM", code: "CAT" },
+      "Pre-Shipment": { type: "NM", code: "PSI" }
+    };
+  ```
+
 ---
 
 ## 5. SISTEM STATUS, MULTI-STEP STAGE & LIFECYCLE
